@@ -1,37 +1,16 @@
-import React from 'react';
-import Button from "@material-ui/core/Button";
+import React, {useState} from 'react';
 import style from './Login.module.scss'
-import TextField from "@material-ui/core/TextField";
+import {Route} from "react-router-dom";
+import {RegistryForm} from "./RegistryForm/RegistryForm";
+import {LoginForm} from "./LoginForm/LoginForm";
 
 
 const Login = () => {
+    let [success, setSuccess] = useState(false);
     return (
         <div className={style.mainBlock}>
-            <div className={style.middleBlock}>
-                <div className={style.textBlock}>
-                    <h2>Войти в аккаунт</h2>
-                    <div>Пожалуйста, войдите в аккаунт</div>
-                </div>
-                <div className={style.textField}>
-                    <TextField
-                        variant={"standard"}
-                        label={"Login"}
-                    />
-                    <TextField
-                        variant={"standard"}
-                        label={"Password"}
-                    />
-                </div>
-                <div className={style.button}>
-                    <Button variant="contained" color="primary" href="#contained-buttons" size={"large"}>
-                        Войти в аккаунт
-                    </Button>
-                </div>
-                <div className={style.reg}>
-                    <a href={"#"}>Зарегестрироваться</a>
-                </div>
-            </div>
-
+            < Route exact path={["/", "/login"]} render={() => <LoginForm/>}/>
+            < Route path={"/registry"} render={() => <RegistryForm success={success}/>}/>
         </div>
 
     );
