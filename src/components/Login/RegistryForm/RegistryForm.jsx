@@ -1,9 +1,11 @@
-import style from "../Login.module.scss";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import {NavLink} from "react-router-dom";
 import React from "react";
 import ErrorOutlineOutlinedIcon from '@material-ui/icons/ErrorOutlineOutlined';
+
+import style from "../Login.module.scss";
+
 
 export const RegistryForm = (props) => {
     return (

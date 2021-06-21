@@ -1,10 +1,13 @@
-import style from "../Login.module.scss";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import {NavLink} from "react-router-dom";
 import React from "react";
 
+import style from "../Login.module.scss";
+
+
 export const LoginForm = () => {
+
     return (
         <div className={style.middleBlock}>
             <div className={style.textBlock}>
@@ -26,7 +29,7 @@ export const LoginForm = () => {
                     Войти в аккаунт
                 </Button>
             </div>
-            <div className={style.reg}>
+            <div className={style.reg} >
                 <NavLink to={"/registry"}>Зарегестрироваться</NavLink>
             </div>
         </div>
