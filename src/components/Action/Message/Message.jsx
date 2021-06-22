@@ -10,13 +10,15 @@ const Message = (props) => {
         style,
         text,
         isMe,
+        checkMess,
+        isReader
     } = props
 
     let date = new Date();
 
     return (
-        <div >
-            <div className={styles.messageAvatar}>
+        <div className={styles.wrapper}>
+            <div className={isMe === true ? styles.messageAvatar : styles.messageAvatarOp}>
                 <div className={styles.avaWrapp}>
                     <div className={styles.ava} style={style}></div>
                 </div>
@@ -30,6 +32,7 @@ const Message = (props) => {
                         {formatDistanceToNow(new Date(2021, 5, 21, 20, 12, 30), { addSuffix: true, includeSeconds: true, locale: ruLocale })}
                         {/*{formatDistanceToNow(date, {includeSeconds: true,*/}
                         {/*     addSuffix: true, locale: ruLocale})}*/}
+                        {isMe && isReader && <div className={styles.checkMess} style={checkMess}></div>}
                     </div>
                 </div>
             </div>
